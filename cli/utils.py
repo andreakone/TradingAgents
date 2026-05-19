@@ -1,7 +1,10 @@
 import questionary
 from typing import List, Optional, Tuple, Dict
+from rich.console import Console
 
 from cli.models import AnalystType
+
+console = Console()
 
 ANALYST_ORDER = [
     ("Market Analyst", AnalystType.MARKET),
@@ -199,7 +202,7 @@ def select_deep_thinking_agent(provider) -> str:
             ("Claude Sonnet 3.5 - Highly capable standard model", "claude-3-5-sonnet-latest"),
             ("Claude Sonnet 3.7 - Exceptional hybrid reasoning and agentic capabilities", "claude-3-7-sonnet-latest"),
             ("Claude Sonnet 4 - High performance and excellent reasoning", "claude-sonnet-4-0"),
-            ("Claude Opus 4 - Most powerful Anthropic model", "	claude-opus-4-0"),
+            ("Claude Opus 4 - Most powerful Anthropic model", "claude-opus-4-0"),
         ],
         "google": [
             ("Gemini 2.0 Flash-Lite - Cost efficiency and low latency", "gemini-2.0-flash-lite"),
